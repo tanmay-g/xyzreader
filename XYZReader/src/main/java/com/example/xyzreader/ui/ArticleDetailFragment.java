@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.ShareCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
@@ -144,6 +145,10 @@ public class ArticleDetailFragment extends Fragment implements
 
         mCollapsingToolbarLayout = (CollapsingToolbarLayout) mRootView.findViewById(R.id.toolbar_container);
         mToolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(mToolbar);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //setSupportActionBar(myToolbar);
+
         bindViews();
 //        updateStatusBar();
 
