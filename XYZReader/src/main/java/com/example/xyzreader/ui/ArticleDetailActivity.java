@@ -9,7 +9,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v13.app.FragmentStatePagerAdapter;
+import android.support.v4.view.OnApplyWindowInsetsListener;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.WindowInsetsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.View;
@@ -17,6 +20,8 @@ import android.view.View;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
+
+//import android.support.v7.view.ViewPager;
 
 /**
  * An activity representing a single Article detail screen, letting you swipe between articles.
@@ -73,6 +78,28 @@ public class ArticleDetailActivity extends AppCompatActivity
 //                updateUpButtonPosition();
             }
         });
+
+        ViewCompat.setOnApplyWindowInsetsListener(mPager,
+            new OnApplyWindowInsetsListener() {
+                @Override
+                public WindowInsetsCompat onApplyWindowInsets(View v,
+                                                              WindowInsetsCompat insets) {
+                    insets = ViewCompat.onApplyWindowInsets(v, insets);
+                    if (insets.isConsumed()) {
+                        return insets;
+                    }
+
+                    boolean consumed = false;
+                    for (int i = 0, count = mPager.getChildCount(); i <  count; i++) {
+                        ViewCompat.dispatchApplyWindowInsets(mPager.getChildAt(i), insets);
+                        if (insets.isConsumed()) {
+                            consumed = true;
+                        }
+                    }
+                    return consumed ? insets.consumeSystemWindowInsets() : insets;
+                }
+            }
+        );
 
 //        mUpButtonContainer = findViewById(R.id.up_container);
 //

@@ -24,9 +24,10 @@
         <item name="colorAccent">@color/theme_accent</item>
     </style>
 
-    <style name="Theme.Bacon.Detail" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.Bacon.Detail" parent="Theme.Bacon">
         <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
     </style>
 
 </resources>
