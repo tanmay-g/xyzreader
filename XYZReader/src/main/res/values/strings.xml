@@ -9,5 +9,8 @@
 
     <string name="up">Up</string>
     <string name="article_by_string">" by "</string>
+    <string name="swipe_toast_text">Swipe to see other articles!</string>
+    <string name="no_net_snackbar_text">No Internet Connectivity</string>
+    <string name="snackbar_dismiss_text">DISMISS</string>
 
 </resources>
