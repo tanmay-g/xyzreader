@@ -12,5 +12,8 @@
     <string name="swipe_toast_text">Swipe to see other articles!</string>
     <string name="no_net_snackbar_text">No Internet Connectivity</string>
     <string name="snackbar_dismiss_text">DISMISS</string>
+    <string name="image_transition_name">image</string>
+    <string name="title_transition_name">title_tran</string>
+    <string name="subtitle_transition_name">subtitle_tran</string>
 
 </resources>

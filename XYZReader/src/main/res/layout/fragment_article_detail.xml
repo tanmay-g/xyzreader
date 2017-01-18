@@ -17,15 +17,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlwaysCollapsed"
-            style="?android:attr/textAppearanceLarge"
             app:expandedTitleTextAppearance="@style/Base.TextAppearance.AppCompat.Large.Inverse"
             app:collapsedTitleTextAppearance="@style/Base.TextAppearance.AppCompat.Medium.Inverse"
-            android:fontFamily="sans-serif-condensed"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:textSize="@dimen/detail_title_text_size"
-            android:lineSpacingMultiplier="0.9"
+            android:transitionName="@string/title_transition_name"
             app:maxLines="3">
+            <!--android:lineSpacingMultiplier="0.9"-->
+            <!--android:textSize="@dimen/detail_title_text_size"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="#fff"-->
+            <!--android:fontFamily="sans-serif-condensed"-->
+            <!--style="?android:attr/textAppearanceLarge"-->
 
             <ImageView
                 android:fitsSystemWindows="true"
@@ -34,6 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
+                android:transitionName="@string/image_transition_name"
                 />
             
             <View
@@ -50,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="#8fff"
                 android:layout_gravity="bottom|end"
+                android:transitionName="@string/subtitle_transition_name"
                 />
 
             <android.support.v7.widget.Toolbar

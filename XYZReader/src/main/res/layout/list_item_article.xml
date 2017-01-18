@@ -24,7 +24,8 @@
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/photo_placeholder"/>
+            android:background="@color/photo_placeholder"
+            android:transitionName="@string/image_transition_name"/>
 
         <TextView
             android:id="@+id/article_title"
@@ -37,7 +38,8 @@
             android:paddingBottom="4dp"
             android:ellipsize="end"
             android:maxLines="4"
-            tools:text="Title Here"/>
+            tools:text="Title Here"
+            android:transitionName="@string/title_transition_name"/>
             <!--android:textColor="@color/ltgray"-->
 
         <TextView
@@ -49,7 +51,8 @@
             android:paddingRight="16dp"
             android:paddingBottom="16dp"
             android:textColor="#6000"
-            tools:text="kasjd  by al;sdkads"/>
+            tools:text="kasjd  by al;sdkads"
+            android:transitionName="@string/subtitle_transition_name"/>
             <!--android:maxLines="1"-->
             <!--android:ellipsize="end"-->
     </LinearLayout>

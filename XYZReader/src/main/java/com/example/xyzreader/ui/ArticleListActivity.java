@@ -39,6 +39,8 @@ public class ArticleListActivity extends AppCompatActivity implements
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
 
+    private ArticleListActivity activity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +76,7 @@ public class ArticleListActivity extends AppCompatActivity implements
                             }
                     ).show();
         }
+        activity = this;
     }
 
     private void refresh() {
@@ -150,8 +153,16 @@ public class ArticleListActivity extends AppCompatActivity implements
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+//                    Pair<View, String> p1 = Pair.create(view.findViewById(R.id.thumbnail), getString(R.string.image_transition_name));
+//                    Pair<View, String> p2 = Pair.create(view.findViewById(R.id.article_title), getString(R.string.title_transition_name));
+//                    Pair<View, String> p3 = Pair.create(view.findViewById(R.id.article_subtitle), getString(R.string.subtitle_transition_name));
+                    startActivity(
+                            new Intent(Intent.ACTION_VIEW,
+                                    ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())))
+//                            ,
+//                            ActivityOptionsCompat.
+//                                    makeSceneTransitionAnimation(activity, p1, p2, p3).toBundle()
+                    );
                 }
             });
             return vh;
