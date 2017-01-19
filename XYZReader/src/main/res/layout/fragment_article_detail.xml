@@ -52,8 +52,10 @@
                 android:layout_height="wrap_content"
                 android:textColor="#8fff"
                 android:layout_gravity="bottom|end"
-                android:transitionName="@string/subtitle_transition_name"
-                />
+                android:layout_marginBottom="@dimen/detail_subtitle_margin_bottom"
+                android:layout_marginEnd="@dimen/detail_subtitle_margin_end"
+                android:layout_marginRight="@dimen/detail_subtitle_margin_end"
+                android:transitionName="@string/subtitle_transition_name"/>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -113,7 +115,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
-        app:fabSize="normal"/>
+        app:fabSize="normal"
+        app:layout_behavior="com.example.xyzreader.ui.FABScrollBehavior"/>
         <!--android:background="@drawable/add_fab_background"-->
 
 </android.support.design.widget.CoordinatorLayout>
